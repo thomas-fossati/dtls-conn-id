@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2021-03-02T00:05:30.557976+00:00",
+  "timestamp": "2021-03-14T00:06:29.001458+00:00",
   "repo": "tlswg/dtls-conn-id",
   "labels": [
     {
@@ -2131,6 +2131,102 @@
           "body": "Hi Thomas,\r\n\r\nThanks for your clarification!\r\n",
           "createdAt": "2021-02-16T10:18:57Z",
           "updatedAt": "2021-02-16T10:18:57Z"
+        }
+      ]
+    },
+    {
+      "number": 88,
+      "id": "MDU6SXNzdWU4Mjk5OTU1NDQ=",
+      "title": "Missing RFC 8174 boilerplate",
+      "url": "https://github.com/tlswg/dtls-conn-id/issues/88",
+      "state": "OPEN",
+      "author": "thomas-fossati",
+      "authorAssociation": "CONTRIBUTOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Tom Petch's review: https://mailarchive.ietf.org/arch/msg/tls/Opmv1JCmY10uBKP1SrzfUpxhzCY/\r\n\r\n```\r\ns.2 lacks the boiler plate of RFC8174\r\n```",
+      "createdAt": "2021-03-12T10:50:38Z",
+      "updatedAt": "2021-03-12T11:47:27Z",
+      "closedAt": null,
+      "comments": [
+        {
+          "author": "hannestschofenig",
+          "authorAssociation": "COLLABORATOR",
+          "body": "https://github.com/tlswg/dtls-conn-id/pull/92",
+          "createdAt": "2021-03-12T11:47:27Z",
+          "updatedAt": "2021-03-12T11:47:27Z"
+        }
+      ]
+    },
+    {
+      "number": 89,
+      "id": "MDU6SXNzdWU4Mjk5OTYwMDI=",
+      "title": "Zero-length CID clarifications",
+      "url": "https://github.com/tlswg/dtls-conn-id/issues/89",
+      "state": "OPEN",
+      "author": "thomas-fossati",
+      "authorAssociation": "CONTRIBUTOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Tom Petch's review: https://mailarchive.ietf.org/arch/msg/tls/Opmv1JCmY10uBKP1SrzfUpxhzCY/\r\n\r\n```\r\ns.3\r\nI found this unclear until I had understood it all (or perhaps I do not\r\nunderstand it)\r\n\r\n\"...or again, alternately, to use a zero-length CID).\"\r\nThis suggests that a zero length CID is valid in Application Data which\r\nlater text seems to contradict; otherwise I cannot see what this is saying.\r\n\r\n\"\u00a0\u00a0If DTLS peers have negotiated the use of a CIDs using the ClientHello\r\nand the ServerHello messages \"\r\narguably sending a zero CID and receiving a zero CID is a successful\r\nHello negotiation perhaps\r\n\" If DTLS peers have negotiated the use of a non-zero CID in at least\r\none direction, using the ClientHello and the ServerHello messages\"\r\n\r\n\"The DTLS peers determine whether incoming and outgoing messages need..\"\r\nseems not to cater for unidirectional CIDs; perhaps\r\n\"The DTLS peers determine whether incoming or outgoing, or both,\r\nmessages need.. \"\r\n```\r\n",
+      "createdAt": "2021-03-12T10:51:15Z",
+      "updatedAt": "2021-03-12T16:13:30Z",
+      "closedAt": null,
+      "comments": [
+        {
+          "author": "boaks",
+          "authorAssociation": "CONTRIBUTOR",
+          "body": "> A zero-length value indicates that the server will send with the client's CID but does not wish the client to include a CID (or again, alternately, to use a zero-length CID).\r\n\r\nMy feeling: remove \"(or again, alternately, to use a zero-length CID)\" and add:\r\n\r\nThe text following that seems to introduce first the idea of a \"zero-length CID\", and later use that to negate the use of tls_cid record. It may be more straight forward, if the \"zero-length CID\" is scoped to the  ClientHello and the ServerHello extensions, and later the use of a tls_cid record is then only caused for a non-empty CID.\r\n \r\n",
+          "createdAt": "2021-03-12T16:13:30Z",
+          "updatedAt": "2021-03-12T16:13:30Z"
+        }
+      ]
+    },
+    {
+      "number": 90,
+      "id": "MDU6SXNzdWU4Mjk5OTY3MDU=",
+      "title": "Assorted typos",
+      "url": "https://github.com/tlswg/dtls-conn-id/issues/90",
+      "state": "OPEN",
+      "author": "thomas-fossati",
+      "authorAssociation": "CONTRIBUTOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Tom Petch's review: https://mailarchive.ietf.org/arch/msg/tls/Opmv1JCmY10uBKP1SrzfUpxhzCY/\r\n\r\n```\r\ns.4\r\n/always recieve CIDs/always receive CIDs/\r\n\r\n\r\ns.5.1\r\n\"the with Encrypt-then-MAC processing described in [RFC7366].\"\r\nI do not understand why 'with' is needed\r\n\r\ns.5.2\r\nditto\r\n\r\ns.8\r\n/this aspects SHOULD refuse/these aspects SHOULD refuse/\r\n```",
+      "createdAt": "2021-03-12T10:52:07Z",
+      "updatedAt": "2021-03-12T11:47:09Z",
+      "closedAt": null,
+      "comments": [
+        {
+          "author": "hannestschofenig",
+          "authorAssociation": "COLLABORATOR",
+          "body": "https://github.com/tlswg/dtls-conn-id/pull/93",
+          "createdAt": "2021-03-12T11:47:09Z",
+          "updatedAt": "2021-03-12T11:47:09Z"
+        }
+      ]
+    },
+    {
+      "number": 91,
+      "id": "MDU6SXNzdWU4Mjk5OTg2NDQ=",
+      "title": "IANA section slight reorg",
+      "url": "https://github.com/tlswg/dtls-conn-id/issues/91",
+      "state": "OPEN",
+      "author": "thomas-fossati",
+      "authorAssociation": "CONTRIBUTOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Tom Petch's review: https://mailarchive.ietf.org/arch/msg/tls/Opmv1JCmY10uBKP1SrzfUpxhzCY/\r\n\r\n```\r\ns.10\r\nI would find this clearer as three sections for the three IANA actions\r\n10.1 new column for ExtensionType\r\n10.2 new value for ExtensionType\r\n10.3 new value for ContentType\r\n\r\n\"\u00a0\u00a0 IANA is requested to allocate an entry to the existing TLS\r\n\u00a0\u00a0\u00a0\u00a0\"ExtensionType Values\" registry, defined in [RFC5246],..\"\r\nwell no; whatever you think of RFC8447 the name has changed\r\n\"\u00a0\u00a0 IANA is requested to allocate an entry to the existing \"TLS\r\n\u00a0\u00a0\u00a0\u00a0ExtensionType Values\" registry, defined in [RFC5246],..\"\r\nor, if you are picky (which I am not),\r\n\u00a0\u00a0\u00a0\u00a0IANA is requested to allocate an entry to the existing \"TLS\r\n\u00a0\u00a0\u00a0\u00a0\"ExtensionType Values\" registry, defined in [RFC5246], and\r\n\u00a0\u00a0\u00a0\u00a0renamed by RFC8447\r\n\r\nAn extra column is added but I cannot see what value should be placed in\r\nthat column for existing entries.\r\n\r\n\"The tls12_cid ContentType is only applicable to DTLS 1.2.\"\r\nGood information but I struggle to see what IANA will do with it; I see\r\nnowhere for it to go.\r\n```",
+      "createdAt": "2021-03-12T10:53:51Z",
+      "updatedAt": "2021-03-12T11:46:54Z",
+      "closedAt": null,
+      "comments": [
+        {
+          "author": "hannestschofenig",
+          "authorAssociation": "COLLABORATOR",
+          "body": "https://github.com/tlswg/dtls-conn-id/pull/94",
+          "createdAt": "2021-03-12T11:46:54Z",
+          "updatedAt": "2021-03-12T11:46:54Z"
         }
       ]
     }
@@ -8279,6 +8375,173 @@
           "body": "Thanks! Can you please resolve conflicts?",
           "createdAt": "2021-02-28T00:31:14Z",
           "updatedAt": "2021-02-28T00:31:14Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 92,
+      "id": "MDExOlB1bGxSZXF1ZXN0NTkxNjA0MTQz",
+      "title": "Adding reference to RFC 8174",
+      "url": "https://github.com/tlswg/dtls-conn-id/pull/92",
+      "state": "OPEN",
+      "author": "hannestschofenig",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2021-03-12T11:35:01Z",
+      "updatedAt": "2021-03-12T12:11:42Z",
+      "baseRepository": "tlswg/dtls-conn-id",
+      "baseRefName": "master",
+      "baseRefOid": "046f17a816b7b2dd1322434ec3ba7e5959f35d70",
+      "headRepository": "tlswg/dtls-conn-id",
+      "headRefName": "hannestschofenig-patch-8",
+      "headRefOid": "5982da44dfb3c2c2c02ebb72377343482b2cd988",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": [
+        {
+          "id": "MDE3OlB1bGxSZXF1ZXN0UmV2aWV3NjEwNzIyNzMw",
+          "commit": {
+            "abbreviatedOid": "5982da4"
+          },
+          "author": "thomas-fossati",
+          "authorAssociation": "CONTRIBUTOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2021-03-12T12:11:33Z",
+          "updatedAt": "2021-03-12T12:11:42Z",
+          "comments": [
+            {
+              "originalPosition": 11,
+              "body": "This whole para could be replaced by a `{::boilerplate bcp14}`",
+              "createdAt": "2021-03-12T12:11:33Z",
+              "updatedAt": "2021-03-12T12:11:42Z"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": 93,
+      "id": "MDExOlB1bGxSZXF1ZXN0NTkxNjA1MzIy",
+      "title": "Nits",
+      "url": "https://github.com/tlswg/dtls-conn-id/pull/93",
+      "state": "OPEN",
+      "author": "hannestschofenig",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2021-03-12T11:36:46Z",
+      "updatedAt": "2021-03-12T12:09:49Z",
+      "baseRepository": "tlswg/dtls-conn-id",
+      "baseRefName": "master",
+      "baseRefOid": "046f17a816b7b2dd1322434ec3ba7e5959f35d70",
+      "headRepository": "tlswg/dtls-conn-id",
+      "headRefName": "hannestschofenig-patch-9",
+      "headRefOid": "d97423eb6eb6650d2a3a805391054af781bed4b5",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": [
+        {
+          "id": "MDE3OlB1bGxSZXF1ZXN0UmV2aWV3NjEwNzIxNDc3",
+          "commit": {
+            "abbreviatedOid": "d97423e"
+          },
+          "author": "thomas-fossati",
+          "authorAssociation": "CONTRIBUTOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2021-03-12T12:09:49Z",
+          "updatedAt": "2021-03-12T12:09:49Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 94,
+      "id": "MDExOlB1bGxSZXF1ZXN0NTkxNjExMzky",
+      "title": "Improved readability of the IANA Consideration Section",
+      "url": "https://github.com/tlswg/dtls-conn-id/pull/94",
+      "state": "OPEN",
+      "author": "hannestschofenig",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2021-03-12T11:46:20Z",
+      "updatedAt": "2021-03-12T12:05:48Z",
+      "baseRepository": "tlswg/dtls-conn-id",
+      "baseRefName": "master",
+      "baseRefOid": "046f17a816b7b2dd1322434ec3ba7e5959f35d70",
+      "headRepository": "tlswg/dtls-conn-id",
+      "headRefName": "hannestschofenig-patch-11",
+      "headRefOid": "cd997f8a41fd18265501c8aff44110b23c52e0b1",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": [
+        {
+          "id": "MDE3OlB1bGxSZXF1ZXN0UmV2aWV3NjEwNzE4NjE5",
+          "commit": {
+            "abbreviatedOid": "cd997f8"
+          },
+          "author": "thomas-fossati",
+          "authorAssociation": "CONTRIBUTOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2021-03-12T12:05:48Z",
+          "updatedAt": "2021-03-12T12:05:48Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 95,
+      "id": "MDExOlB1bGxSZXF1ZXN0NTkxNjE3MzUz",
+      "title": "Added Acknowledgements",
+      "url": "https://github.com/tlswg/dtls-conn-id/pull/95",
+      "state": "OPEN",
+      "author": "hannestschofenig",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2021-03-12T11:55:40Z",
+      "updatedAt": "2021-03-12T12:04:08Z",
+      "baseRepository": "tlswg/dtls-conn-id",
+      "baseRefName": "master",
+      "baseRefOid": "046f17a816b7b2dd1322434ec3ba7e5959f35d70",
+      "headRepository": "tlswg/dtls-conn-id",
+      "headRefName": "hannestschofenig-patch-12",
+      "headRefOid": "a335dfe0a0b622d96ed63743da6dacf8c3cc3f1d",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": [
+        {
+          "id": "MDE3OlB1bGxSZXF1ZXN0UmV2aWV3NjEwNzE3NDg4",
+          "commit": {
+            "abbreviatedOid": "a335dfe"
+          },
+          "author": "thomas-fossati",
+          "authorAssociation": "CONTRIBUTOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2021-03-12T12:04:08Z",
+          "updatedAt": "2021-03-12T12:04:08Z",
           "comments": []
         }
       ]
